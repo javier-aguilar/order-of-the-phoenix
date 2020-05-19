@@ -1,0 +1,17 @@
+<br />
+
+<h2 class = "total-members">Total Number: <%= @members.size %></h2>
+<section class = "members">
+  <ul>
+    <% @members.each do | member | %>
+      <li>
+        <%= member.name %>
+        <ul>
+          <li> Role: <%= member.role %> </li>
+          <li> House: <%= member.house %> </li>
+          <li> Patronus: <%= member.patronus.capitalize if member.patronus %> </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</section>
