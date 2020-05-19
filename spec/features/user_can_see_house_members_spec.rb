@@ -14,15 +14,15 @@ RSpec.describe "As a user" do
 
       within('.members') do
         expect(page.all('li')[0]).to have_content("Sirius Black")
-        expect(page.all('li')[1]).to have_content("Role:")
-        expect(page.all('li')[2]).to have_content("House: Gryffindor")
-        expect(page.all('li')[3]).to have_content("Patronus:")
+        expect(page.all('li')[1]).to have_content("House: Gryffindor")
+        expect(page.all('li')[0]).to_not have_content("Role:")
+        expect(page.all('li')[0]).to_not have_content("Patronus:")
       end
       within('.members') do
-        expect(page.all('li')[4]).to have_content("Aberforth Dumbledore")
-        expect(page.all('li')[5]).to have_content("Role: Owner, Hog's Head Inn")
-        expect(page.all('li')[6]).to have_content("House: Gryffindor")
-        expect(page.all('li')[7]).to have_content("Patronus: Goat")
+        expect(page.all('li')[2]).to have_content("Aberforth Dumbledore")
+        expect(page.all('li')[3]).to have_content("Role: Owner, Hog's Head Inn")
+        expect(page.all('li')[4]).to have_content("House: Gryffindor")
+        expect(page.all('li')[5]).to have_content("Patronus: Goat")
       end
 
       visit root_path
