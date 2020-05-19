@@ -2,9 +2,8 @@ class PotterService
   def initialize()
   end
 
-  def list_houses
-    binding.pry
-    get_json("houses?key=#{ENV['API_KEY']}")
+  def list_characters_by_house_and_in_oof(house)
+    get_json("characters?key=#{ENV['API_KEY']}&house=#{house}&orderOfThePhoenix=true")
   end
 
   private
