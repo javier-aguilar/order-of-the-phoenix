@@ -1,7 +1,6 @@
 class SearchController < ApplicationController
   def index
-    search_params
-    Potter.list_houses
+    @members = Potter.list_house_members_in_oof(search_params[:house])
   end
 
   private
