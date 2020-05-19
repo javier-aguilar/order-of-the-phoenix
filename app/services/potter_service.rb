@@ -3,7 +3,8 @@ class PotterService
   end
 
   def list_characters_by_house_and_in_oof(house)
-    get_json("characters?key=#{ENV['API_KEY']}&house=#{house}&orderOfThePhoenix=true")
+    params = {key: ENV['API_KEY'], house: house, orderOfThePhoenix: true }
+    get_json("characters", params)
   end
 
   private
