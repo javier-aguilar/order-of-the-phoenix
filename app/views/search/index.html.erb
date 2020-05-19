@@ -1,5 +1,3 @@
-<br />
-
 <h2 class = "total-members">Total Number: <%= @members.size %></h2>
 <section class = "members">
   <ul>
@@ -7,9 +5,13 @@
       <li>
         <%= member.name %>
         <ul>
-          <li> Role: <%= member.role %> </li>
+          <% if member.role %>
+            <li> Role: <%= member.role %> </li>
+          <% end %>
           <li> House: <%= member.house %> </li>
-          <li> Patronus: <%= member.patronus.capitalize if member.patronus %> </li>
+          <% if member.patronus %>
+            <li> Patronus: <%= member.patronus.capitalize %> </li>
+          <% end %>
         </ul>
       </li>
     <% end %>
